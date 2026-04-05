@@ -12,7 +12,7 @@ const teamMembers = [
     name: "Pari Katariya",
     role: "Event Head",
     phone: "7470574373",
-    image: "/team/Sample.jpeg",
+    image: "/team/pari.jpeg",
   },
   {
     name: "Prashant Mishra",
