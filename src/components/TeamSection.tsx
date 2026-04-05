@@ -83,7 +83,7 @@ const teamMembers = [
     role: "Event Coordinator",
     phone: "9599012714",
     image: "/team/moksh.jpeg",
-    linkedin: "",
+    linkedin: "https://www.linkedin.com/in/moksh-bhardwaj-01aa4b395/",
   },
   {
     name: "Anmol   Raj",
