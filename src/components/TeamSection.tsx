@@ -37,13 +37,6 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/akalp-mishra-1aa5b43b5/",
   },
   {
-    name: "Moksh Bhardwaj",
-    role: "Event Coordinator",
-    phone: "9599012714",
-    image: "/team/Sample.jpeg",
-    linkedin: "",
-  },
-  {
     name: "Kunal Bagga",
     role: "Event Coordinator",
     phone: "9012261370",
@@ -84,6 +77,13 @@ const teamMembers = [
     phone: "8070475858",
     image: "/team/rutika.jpeg",
     linkedin: "https://www.linkedin.com/in/rutika-sable-321390321/",
+  },
+  {
+    name: "Moksh Bhardwaj",
+    role: "Event Coordinator",
+    phone: "9599012714",
+    image: "/team/Sample.jpeg",
+    linkedin: "",
   },
   {
     name: "Anmol   Raj",
