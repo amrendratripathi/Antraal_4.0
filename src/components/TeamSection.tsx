@@ -167,7 +167,7 @@ const TeamSection = () => {
                     />
                   </div>
                   <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2">{member.name}</h3>
-                  <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
+                  <p className="text-primary text-base font-bold mb-4">{member.role}</p>
                 </div>
                 {member.linkedin ? (
                   <a
@@ -219,16 +219,15 @@ const TeamSection = () => {
                   }}
                 >
                   <div>
-                    <div className="h-40 w-40 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
+                    <div className="h-52 w-52 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
                       <img
                         src={member.image}
                         alt={member.name}
                         className="h-full w-full object-cover"
                       />
                     </div>
-                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">{member.name}</h3>
-                    <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
-                    <p className="text-muted-foreground text-xs mb-4">📞 {member.phone}</p>
+                    <h3 className="font-heading text-3xl font-bold text-foreground mb-3">{member.name}</h3>
+                    <p className="text-primary text-lg font-semibold mb-6">{member.role}</p>
                   </div>
                   {member.linkedin ? (
                     <a
