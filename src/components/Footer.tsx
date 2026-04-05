@@ -16,7 +16,7 @@ const Footer = () => {
             Instagram: @hexclan.liet
           </a>
           <a
-            href="https://www.linkedin.com/company/hexclan-liet"
+            href="https://www.linkedin.com/company/hexclan/"
             target="_blank"
             rel="noopener noreferrer"
             className="text-muted-foreground hover:text-primary transition-colors text-sm"
