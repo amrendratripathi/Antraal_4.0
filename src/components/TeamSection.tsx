@@ -47,7 +47,7 @@ const teamMembers = [
     name: "Kunal Bagga",
     role: "Event Coordinator",
     phone: "9012261370",
-    image: "/team/Sample.jpeg",
+    image: "/team/kunal.jpeg",
     linkedin: "https://www.linkedin.com/in/kunal-bagga-ba6524328/",
   },
   {
@@ -89,7 +89,7 @@ const teamMembers = [
     name: "Anmol   Raj",
     role: "Event Volunteer",
     phone: "7783845818",
-    image: "/team/Sample.jpeg",
+    image: "/team/anmol.jpeg",
     linkedin: "https://www.linkedin.com/in/anmol-raj-25692b2a7/",
   },
   {
