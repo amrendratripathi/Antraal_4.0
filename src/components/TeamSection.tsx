@@ -104,6 +104,9 @@ const TeamSection = () => {
     return teamMembers[index];
   });
 
+  const ribbonItems = Array.from({ length: 10 }, () => " TEAM ");
+  const marqueeItems = [...ribbonItems, ...ribbonItems];
+
   const handleNext = () => {
     setStartIndex((prev) => (prev + 1) % teamMembers.length);
   };
@@ -120,10 +123,10 @@ const TeamSection = () => {
 
         <div className="scroll-reveal mb-10">
           <div className="relative overflow-hidden rounded-full border border-border/40 bg-surface-glass/70 py-3">
-            <div className="marquee flex gap-4 text-primary/60 text-2xl font-heading uppercase tracking-[0.3em] opacity-70">
-              <span>• • • • • • •</span>
-              <span>• • • • • • •</span>
-              <span>• • • • • • •</span>
+            <div className="marquee flex items-center gap-10 whitespace-nowrap text-primary/60 text-2xl font-heading uppercase tracking-[0.3em] opacity-70">
+              {marqueeItems.map((item, idx) => (
+                <span key={idx}>{item}</span>
+              ))}
             </div>
           </div>
         </div>
@@ -225,10 +228,10 @@ const TeamSection = () => {
 
         <div className="scroll-reveal mt-10">
           <div className="relative overflow-hidden rounded-full border border-border/40 bg-surface-glass/70 py-3">
-            <div className="marquee flex gap-4 text-primary/60 text-2xl font-heading uppercase tracking-[0.3em] opacity-70">
-              <span>• • • • • • •</span>
-              <span>• • • • • • •</span>
-              <span>• • • • • • •</span>
+            <div className="marquee flex items-center gap-10 whitespace-nowrap text-primary/60 text-2xl font-heading uppercase tracking-[0.3em] opacity-70">
+              {marqueeItems.map((item, idx) => (
+                <span key={idx}>{item}</span>
+              ))}
             </div>
           </div>
         </div>
