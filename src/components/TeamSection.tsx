@@ -19,7 +19,7 @@ const teamMembers = [
     name: "Tanu Singh",
     role: "Event Coordinator",
     phone: "8439836370",
-    image: "/team/Sample.jpeg",
+    image: "/team/tanu.jpeg",
     linkedin: "https://www.linkedin.com/in/tanu-singh-a366a52b9/",
   },
   {
