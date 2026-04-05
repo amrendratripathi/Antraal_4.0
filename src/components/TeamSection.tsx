@@ -6,90 +6,105 @@ const teamMembers = [
     name: "Amrendra Tripathi",
     role: "Event Head",
     image: "/team/Amrendra.jpeg",
+    linkedin: "https://www.linkedin.com/in/amrendra-tripathi-67b906279/",
   },
   {
     name: "Pari Katariya",
     role: "Event Head",
     phone: "7470574373",
     image: "/team/pari1.jpeg",
+    linkedin: "https://www.linkedin.com/in/pari-katariya-aa75382aa/",
   },
   {
     name: "Tanu Singh",
     role: "Event Coordinator",
     phone: "8439836370",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/tanu-singh-a366a52b9/",
   },
   {
     name: "Prashant Mishra",
     role: "Event Coordinator",
     phone: "6306995599",
     image: "/team/prashant.jpeg",
+    linkedin: "https://www.linkedin.com/in/prashantm9428/",
   },
   {
     name: "Akalp Mishra",
     role: "Event Coordinator",
     phone: "9354945823",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/akalp-mishra-1aa5b43b5/",
   },
   {
     name: "Moksh Bhardwaj",
     role: "Event Coordinator",
     phone: "9599012714",
     image: "/team/Sample.jpeg",
+    linkedin: "",
   },
   {
     name: "Kunal Bagga",
     role: "Event Coordinator",
     phone: "9012261370",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/kunal-bagga-ba6524328/",
   },
   {
     name: "Vaibhav Tiwari",
     role: "Event Coordinator",
     phone: "8004596673",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/vaibhav-tiwari-455340325/",
   },
   {
     name: "Chiranjeev Mishra",
     role: "Event Coordinator",
     phone: "9311090999",
     image: "/team/chiranjeev.jpeg",
+    linkedin: "https://www.linkedin.com/in/chiranjeev-mishra-59812b315/",
   },
   {
     name: "Shivani Sharma",
     role: "Event Coordinator",
     phone: "8920575147",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/shivani-sharma-b8029a344/",
   },
   {
     name: "Taru Sharma",
     role: "Event Coordinator",
     phone: "7011047905",
     image: "/team/taru.jpeg",
+    linkedin: "https://www.linkedin.com/in/taru-sharma-647823323/",
   },
   {
     name: "Rutika Sable",
     role: "Event Coordinator",
     phone: "8070475858",
     image: "/team/rutika.jpeg",
+    linkedin: "https://www.linkedin.com/in/rutika-sable-321390321/",
   },
   {
     name: "Anmol   Raj",
     role: "Event Volunteer",
     phone: "7783845818",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/anmol-raj-25692b2a7/",
   },
   {
     name: "Vanshika Chauhan",
     role: "Event Volunteer",
     phone: "6397513064",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/vanshika-chauhan-244429303/",
   },
   {
     name: "Roshan Dubey",
     role: "Event Volunteer",
     phone: "9304122659",
     image: "/team/Sample.jpeg",
+    linkedin: "https://www.linkedin.com/in/roshan-kumar-dubey-508975340/",
   },
 ];
 
@@ -136,24 +151,37 @@ const TeamSection = () => {
             {visibleMembers.map((member, i) => (
               <div
                 key={member.name}
-                className="glass-card p-8 text-center group hover:glow-border transition-all duration-500 border-primary/25 shadow-[0_0_45px_-15px_rgba(59,130,246,0.25)]"
+                className="glass-card p-8 text-center group hover:glow-border transition-all duration-500 border-primary/25 shadow-[0_0_45px_-15px_rgba(59,130,246,0.25)] flex flex-col justify-between h-full"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="h-44 w-44 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="h-full w-full object-cover"
-                  />
+                <div>
+                  <div className="h-44 w-44 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2">{member.name}</h3>
+                  <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
                 </div>
-                <h3 className="font-heading text-xl md:text-2xl font-bold text-foreground mb-2">{member.name}</h3>
-                <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
-                <button
-                  type="button"
-                  className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
-                >
-                  Connect
-                </button>
+                {member.linkedin ? (
+                  <a
+                    href={member.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Connect
+                  </a>
+                ) : (
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Connect
+                  </button>
+                )}
               </div>
             ))}
           </div>
@@ -177,7 +205,7 @@ const TeamSection = () => {
               return (
                 <div
                   key={member.name}
-                  className="glass-card absolute inset-x-0 mx-auto w-[92%] p-8 text-center transition-all duration-700 ease-out shadow-[0_0_45px_-15px_rgba(59,130,246,0.25)]"
+                  className="glass-card absolute inset-x-0 mx-auto w-[92%] p-8 text-center transition-all duration-700 ease-out shadow-[0_0_45px_-15px_rgba(59,130,246,0.25)] flex flex-col justify-between h-full"
                   style={{
                     top: `${offsets[i]}%`,
                     zIndex: 40 - i * 10,
@@ -186,22 +214,35 @@ const TeamSection = () => {
                     transitionDelay: `${i * 50}ms`,
                   }}
                 >
-                  <div className="h-40 w-40 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
-                    <img
-                      src={member.image}
-                      alt={member.name}
-                      className="h-full w-full object-cover"
-                    />
+                  <div>
+                    <div className="h-40 w-40 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
+                      <img
+                        src={member.image}
+                        alt={member.name}
+                        className="h-full w-full object-cover"
+                      />
+                    </div>
+                    <h3 className="font-heading text-xl font-bold text-foreground mb-2">{member.name}</h3>
+                    <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
+                    <p className="text-muted-foreground text-xs mb-4">📞 {member.phone}</p>
                   </div>
-                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">{member.name}</h3>
-                  <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
-                  <p className="text-muted-foreground text-xs mb-4">📞 {member.phone}</p>
-                  <button
-                    type="button"
-                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
-                  >
-                    Connect
-                  </button>
+                  {member.linkedin ? (
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
+                    >
+                      Connect
+                    </a>
+                  ) : (
+                    <button
+                      type="button"
+                      className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
+                    >
+                      Connect
+                    </button>
+                  )}
                 </div>
               );
             })}
