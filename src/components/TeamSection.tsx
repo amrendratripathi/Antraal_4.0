@@ -82,7 +82,7 @@ const teamMembers = [
     name: "Moksh Bhardwaj",
     role: "Event Coordinator",
     phone: "9599012714",
-    image: "/team/Sample.jpeg",
+    image: "/team/moksh.jpeg",
     linkedin: "",
   },
   {
