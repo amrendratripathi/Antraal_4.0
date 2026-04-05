@@ -124,15 +124,11 @@ const TeamSection = () => {
         </div>
 
         <div className="relative max-w-6xl mx-auto overflow-visible">
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 px-8">
+          <div className="hidden sm:grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-10 px-4 sm:px-8">
             {visibleMembers.map((member, i) => (
               <div
                 key={member.name}
-                className={`glass-card p-8 text-center group hover:glow-border transition-all duration-500 ${
-                  member.name === "Amrendra Tripathi" || member.name === "Pari Katariya"
-                    ? "border-primary/55 shadow-[0_0_45px_-15px_rgba(59,130,246,0.45)]"
-                    : ""
-                }`}
+                className="glass-card p-8 text-center group hover:glow-border transition-all duration-500 border-primary/25 shadow-[0_0_45px_-15px_rgba(59,130,246,0.25)]"
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
                 <div className="h-44 w-44 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
@@ -155,14 +151,72 @@ const TeamSection = () => {
             ))}
           </div>
 
+          <div className="relative sm:hidden h-[34rem] max-w-md mx-auto overflow-hidden rounded-[2rem]">
+            <div className="absolute inset-x-0 top-8 flex justify-center gap-3 pointer-events-none">
+              {visibleMembers.slice(1, 4).map((_, idx) => (
+                <div
+                  key={idx}
+                  className={`h-12 w-20 rounded-[1.5rem] border border-white/10 bg-white/5 backdrop-blur-sm ${
+                    idx === 0 ? "opacity-80 -translate-y-0" : idx === 1 ? "opacity-70 -translate-y-1" : "opacity-60 -translate-y-2"
+                  } transition-all duration-500`}
+                />
+              ))}
+            </div>
+
+            {visibleMembers.map((member, i) => {
+              const offsets = [0, 5, 10, 15];
+              const opacity = [1, 0.92, 0.82, 0.72];
+              const scale = [1, 0.97, 0.94, 0.9];
+              return (
+                <div
+                  key={member.name}
+                  className="glass-card absolute inset-x-0 mx-auto w-[92%] p-8 text-center transition-all duration-700 ease-out shadow-[0_0_45px_-15px_rgba(59,130,246,0.25)]"
+                  style={{
+                    top: `${offsets[i]}%`,
+                    zIndex: 40 - i * 10,
+                    opacity: opacity[i],
+                    transform: `scale(${scale[i]})`,
+                    transitionDelay: `${i * 50}ms`,
+                  }}
+                >
+                  <div className="h-40 w-40 mx-auto mb-6 rounded-full overflow-hidden border border-white/10 shadow-[0_24px_80px_-45px_rgba(0,0,0,0.85)]">
+                    <img
+                      src={member.image}
+                      alt={member.name}
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
+                  <h3 className="font-heading text-xl font-bold text-foreground mb-2">{member.name}</h3>
+                  <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
+                  <p className="text-muted-foreground text-xs mb-4">📞 {member.phone}</p>
+                  <button
+                    type="button"
+                    className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition hover:bg-white/10"
+                  >
+                    Connect
+                  </button>
+                </div>
+              );
+            })}
+          </div>
+
           <button
             type="button"
             onClick={handleNext}
-            className="absolute right-[-2.5rem] top-1/2 -translate-y-1/2 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition z-10"
+            className="hidden sm:inline-flex absolute right-4 md:right-6 xl:right-[-2.5rem] top-1/2 -translate-y-1/2 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition z-10"
             aria-label="Show next team members"
           >
             <span className="text-3xl">›</span>
           </button>
+
+          <div className="mt-6 flex justify-center sm:hidden">
+            <button
+              type="button"
+              onClick={handleNext}
+              className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition"
+            >
+              Next</button>
+          </div>
         </div>
 
         <div className="scroll-reveal mt-10">

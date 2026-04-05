@@ -78,9 +78,9 @@ const EventCard = ({ event, index }: { event: typeof events[0]; index: number })
       <div className={`${isReversed ? "md:order-1" : ""} space-y-6`}>
         <p className="text-primary font-heading text-xs tracking-[0.3em]">{event.tagline}</p>
         <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">{event.title}</h3>
-        <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed max-w-xl mx-auto md:mx-0">{event.description}</p>
+        <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed max-w-full md:max-w-xl mx-auto md:mx-0">{event.description}</p>
 
-        <div className="grid grid-cols-2 gap-3 pt-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
           {[
             { icon: "📅", label: event.date },
             { icon: "⏰", label: event.time },

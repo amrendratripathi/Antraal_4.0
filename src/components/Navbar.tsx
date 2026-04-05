@@ -21,7 +21,7 @@ const Navbar = () => {
         scrolled ? "glass-card py-2" : "bg-transparent py-4"
       }`}
     >
-      <div className="container mx-auto flex items-center justify-between px-4">
+      <div className="container mx-auto flex flex-wrap items-center justify-between gap-4 px-4">
         <div className="flex items-center gap-3">
           <img src={lloydLogo} alt="Lloyd Institute" className="h-10 w-10 rounded-full object-cover" />
           <img src={hexclanLogo} alt="Hex Clan" className="h-10 w-10 rounded-full object-cover" />

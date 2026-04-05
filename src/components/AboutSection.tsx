@@ -23,7 +23,7 @@ const AboutSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 scroll-reveal" style={{ transitionDelay: "0.2s" }}>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 scroll-reveal" style={{ transitionDelay: "0.2s" }}>
           {stats.map((stat) => (
             <div key={stat.label} className="glass-card p-6 text-center group hover:glow-border transition-all duration-500">
               <div className="text-3xl md:text-4xl font-heading font-bold text-gradient mb-2">{stat.value}</div>
