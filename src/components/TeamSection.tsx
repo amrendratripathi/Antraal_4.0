@@ -33,7 +33,7 @@ const teamMembers = [
     name: "Akalp Mishra",
     role: "Event Coordinator",
     phone: "9354945823",
-    image: "/team/Sample.jpeg",
+    image: "/team/akalp.jpeg",
     linkedin: "https://www.linkedin.com/in/akalp-mishra-1aa5b43b5/",
   },
   {
@@ -68,7 +68,7 @@ const teamMembers = [
     name: "Shivani Sharma",
     role: "Event Coordinator",
     phone: "8920575147",
-    image: "/team/Sample.jpeg",
+    image: "/team/shivani.jpeg",
     linkedin: "https://www.linkedin.com/in/shivani-sharma-b8029a344/",
   },
   {
