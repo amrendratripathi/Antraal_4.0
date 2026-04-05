@@ -43,8 +43,8 @@ const HeroSection = () => {
             loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
           }`}
         >
-          <img src={lloydLogo} alt="Lloyd Institute" className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-primary/30" />
-          <img src={hexclanLogo} alt="Hex Clan" className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-primary/30" />
+          {/* <img src={lloydLogo} alt="Lloyd Institute" className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-primary/30" />
+          <img src={hexclanLogo} alt="Hex Clan" className="h-16 w-16 md:h-20 md:w-20 rounded-full object-cover border-2 border-primary/30" /> */}
         </div>
 
         <p

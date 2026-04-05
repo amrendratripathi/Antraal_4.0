@@ -54,7 +54,7 @@ const teamMembers = [
     name: "Vaibhav Tiwari",
     role: "Event Coordinator",
     phone: "8004596673",
-    image: "/team/Sample.jpeg",
+    image: "/team/vaibhav.jpeg",
     linkedin: "https://www.linkedin.com/in/vaibhav-tiwari-455340325/",
   },
   {
@@ -96,7 +96,7 @@ const teamMembers = [
     name: "Vanshika Chauhan",
     role: "Event Volunteer",
     phone: "6397513064",
-    image: "/team/Sample.jpeg",
+    image: "/team/vanshika.jpeg",
     linkedin: "https://www.linkedin.com/in/vanshika-chauhan-244429303/",
   },
   {
@@ -124,6 +124,10 @@ const TeamSection = () => {
 
   const handleNext = () => {
     setStartIndex((prev) => (prev + 1) % teamMembers.length);
+  };
+
+  const handlePrev = () => {
+    setStartIndex((prev) => (prev > 0 ? prev - 1 : 0));
   };
 
   return (
@@ -186,7 +190,7 @@ const TeamSection = () => {
             ))}
           </div>
 
-          <div className="relative sm:hidden h-[34rem] max-w-md mx-auto overflow-hidden rounded-[2rem]">
+          <div className="relative sm:hidden h-[30rem] max-w-md mx-auto overflow-hidden rounded-[2rem]">
             <div className="absolute inset-x-0 top-8 flex justify-center gap-3 pointer-events-none">
               {visibleMembers.slice(1, 4).map((_, idx) => (
                 <div
@@ -248,6 +252,17 @@ const TeamSection = () => {
             })}
           </div>
 
+          {startIndex > 0 && (
+            <button
+              type="button"
+              onClick={handlePrev}
+              className="hidden sm:inline-flex absolute left-4 md:left-6 xl:left-[-2.5rem] top-1/2 -translate-y-1/2 inline-flex h-16 w-16 items-center justify-center rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition z-10"
+              aria-label="Show previous team members"
+            >
+              <span className="text-3xl">‹</span>
+            </button>
+          )}
+
           <button
             type="button"
             onClick={handleNext}
@@ -257,13 +272,23 @@ const TeamSection = () => {
             <span className="text-3xl">›</span>
           </button>
 
-          <div className="mt-6 flex justify-center sm:hidden">
+          <div className="mt-6 flex justify-center sm:hidden gap-4">
+            {startIndex > 0 && (
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition"
+              >
+                Prev
+              </button>
+            )}
             <button
               type="button"
               onClick={handleNext}
               className="inline-flex items-center justify-center rounded-full bg-primary px-8 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition"
             >
-              Next</button>
+              Next
+            </button>
           </div>
         </div>
 

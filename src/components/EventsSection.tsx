@@ -55,6 +55,8 @@ const events = [
   },
 ];
 
+const registerUrl = "https://forms.gle/TiMCKYYY13Fm25Bz6";
+
 const EventCard = ({ event, index }: { event: typeof events[0]; index: number }) => {
   const isReversed = index % 2 !== 0;
 
@@ -104,6 +106,17 @@ const EventCard = ({ event, index }: { event: typeof events[0]; index: number })
               <p key={c}>📞 {c}</p>
             ))}
           </div>
+        </div>
+
+        <div className="mt-6">
+          <a
+            href={registerUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/30 hover:bg-primary/90 transition"
+          >
+            Register Now
+          </a>
         </div>
       </div>
     </div>
