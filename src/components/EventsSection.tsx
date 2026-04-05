@@ -68,17 +68,17 @@ const EventCard = ({ event, index }: { event: typeof events[0]; index: number })
           <img
             src={event.image}
             alt={event.title}
-            className="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105"
+            className="w-full aspect-[3/4] bg-background object-contain transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
         </div>
       </div>
 
-      <div className={`${isReversed ? "md:order-1" : ""} space-y-4`}>
+      <div className={`${isReversed ? "md:order-1" : ""} space-y-6`}>
         <p className="text-primary font-heading text-xs tracking-[0.3em]">{event.tagline}</p>
         <h3 className="text-3xl md:text-4xl font-heading font-bold text-foreground">{event.title}</h3>
-        <p className="text-muted-foreground text-lg leading-relaxed">{event.description}</p>
+        <p className="text-muted-foreground text-xl md:text-2xl leading-relaxed max-w-xl mx-auto md:mx-0">{event.description}</p>
 
         <div className="grid grid-cols-2 gap-3 pt-2">
           {[

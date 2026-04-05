@@ -5,9 +5,9 @@ const AboutSection = () => {
 
   const stats = [
     { value: "4", label: "Events" },
-    { value: "3", label: "Days" },
+    { value: "2", label: "Days" },
     { value: "₹20K+", label: "Prize Pool" },
-    { value: "500+", label: "Participants" },
+    { value: "Certificates", label: "for all Participants" },
   ];
 
   return (

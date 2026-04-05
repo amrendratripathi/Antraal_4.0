@@ -24,6 +24,9 @@ const Footer = () => {
             LinkedIn: Hexclan-LIET
           </a>
         </div>
+        <p className="text-muted-foreground text-sm">
+          Built by <a href="https://amrendra.engineer" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80 transition-colors">Amrendra Tripathi</a>
+        </p>
         <p className="text-muted-foreground/50 text-xs">© 2026 Hex Clan — LIET. All rights reserved.</p>
       </div>
     </footer>

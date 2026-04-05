@@ -37,12 +37,14 @@ const Navbar = () => {
             </button>
           ))}
         </div>
-        <button
-          onClick={() => scrollTo("events")}
+        <a
+          href="https://forms.gle/TiMCKYYY13Fm25Bz6"
+          target="_blank"
+          rel="noopener noreferrer"
           className="bg-primary/10 border border-primary/30 text-primary px-5 py-2 rounded-lg text-sm font-semibold hover:bg-primary/20 transition-all duration-300 animate-glow-pulse"
         >
           Register Now
-        </button>
+        </a>
       </div>
     </nav>
   );
