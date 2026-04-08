@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import lloydLogo from "@/assets/lloyd_logo.webp";
 import hexclanLogo from "@/assets/hexclan_logo.jpeg";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -15,6 +18,15 @@ const Navbar = () => {
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
+  };
+
+  const navigateToSection = (id: string) => {
+    setMenuOpen(false);
+    if (location.pathname === "/") {
+      scrollTo(id);
+    } else {
+      navigate("/", { state: { targetSection: id } });
+    }
   };
 
   const toggleMenu = () => setMenuOpen((open) => !open);
@@ -35,7 +47,7 @@ const Navbar = () => {
           {["home", "about", "events", "team"].map((item) => (
             <button
               key={item}
-              onClick={() => scrollTo(item)}
+              onClick={() => navigateToSection(item)}
               className="text-muted-foreground hover:text-primary transition-colors duration-300 uppercase text-sm tracking-widest font-medium"
             >
               {item}
@@ -49,6 +61,13 @@ const Navbar = () => {
           >
             Brochure
           </a>
+          <button
+            type="button"
+            onClick={() => navigate("/certificates")}
+            className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary/90"
+          >
+            Certificates
+          </button>
         </div>
         <div className="flex items-center gap-3">
           <a
@@ -79,7 +98,7 @@ const Navbar = () => {
           {["home", "about", "events", "team"].map((item) => (
             <button
               key={item}
-              onClick={() => scrollTo(item)}
+              onClick={() => navigateToSection(item)}
               className="w-full text-left text-muted-foreground hover:text-primary transition-colors duration-300 uppercase text-sm tracking-widest font-medium py-3"
             >
               {item}
@@ -101,6 +120,16 @@ const Navbar = () => {
           >
             Register Now
           </a>
+          <button
+            type="button"
+            onClick={() => {
+              setMenuOpen(false);
+              navigate("/certificates");
+            }}
+            className="mt-2 block w-full rounded-xl bg-primary/90 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-primary transition"
+          >
+            Certificates
+          </button>
         </div>
       )}
     </nav>
