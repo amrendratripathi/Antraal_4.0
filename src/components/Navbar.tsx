@@ -61,13 +61,6 @@ const Navbar = () => {
           >
             Brochure
           </a>
-          <button
-            type="button"
-            onClick={() => navigate("/certificates")}
-            className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary/90"
-          >
-            Certificates
-          </button>
         </div>
         <div className="flex items-center gap-3">
           <a
@@ -120,16 +113,6 @@ const Navbar = () => {
           >
             Register Now
           </a>
-          <button
-            type="button"
-            onClick={() => {
-              setMenuOpen(false);
-              navigate("/certificates");
-            }}
-            className="mt-2 block w-full rounded-xl bg-primary/90 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-primary transition"
-          >
-            Certificates
-          </button>
         </div>
       )}
     </nav>
