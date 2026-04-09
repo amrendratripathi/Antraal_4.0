@@ -110,7 +110,7 @@ const teamMembers = [
     name: "Roshan Dubey",
     role: "Event Coordinator",
     phone: "9304122659",
-    image: "/team/Sample.jpeg",
+    image: "/team/roshan.jpeg",
     linkedin: "https://www.linkedin.com/in/roshan-kumar-dubey-508975340/",
   },
 ];
