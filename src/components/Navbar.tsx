@@ -15,6 +15,8 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const navItems = ["home", "about", "events", "team", "certificates"] as const;
+
   const scrollTo = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
     setMenuOpen(false);
@@ -22,6 +24,11 @@ const Navbar = () => {
 
   const navigateToSection = (id: string) => {
     setMenuOpen(false);
+    if (id === "certificates") {
+      navigate("/certificates");
+      return;
+    }
+
     if (location.pathname === "/") {
       scrollTo(id);
     } else {
@@ -44,7 +51,7 @@ const Navbar = () => {
           <img src={hexclanLogo} alt="Hex Clan" className="h-10 w-10 rounded-full object-cover" />
         </div>
         <div className="hidden md:flex items-center gap-8">
-          {["home", "about", "events", "team"].map((item) => (
+          {navItems.map((item) => (
             <button
               key={item}
               onClick={() => navigateToSection(item)}
@@ -88,7 +95,7 @@ const Navbar = () => {
       </div>
       {menuOpen && (
         <div className="md:hidden mt-3 w-full rounded-2xl border border-border/30 bg-surface-glass/90 p-4 backdrop-blur-xl">
-          {["home", "about", "events", "team"].map((item) => (
+          {navItems.map((item) => (
             <button
               key={item}
               onClick={() => navigateToSection(item)}

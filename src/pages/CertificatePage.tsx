@@ -28,6 +28,7 @@ export default function CertificatePage() {
   const [studentFound, setStudentFound] = useState(false);
   const [studentInfo, setStudentInfo] = useState<{
     teamLeader: string;
+    teamName?: string;
     teamMembers: string[];
     event: string;
   } | null>(null);
@@ -76,6 +77,7 @@ export default function CertificatePage() {
       if (student) {
         setStudentInfo({
           teamLeader: student.teamLeader,
+          teamName: student.teamName,
           teamMembers: student.teamMembers,
           event: student.event,
         });
@@ -261,6 +263,13 @@ export default function CertificatePage() {
                       <p className="text-sm text-muted-foreground mb-1">Team Leader</p>
                       <p className="text-lg font-semibold text-primary">{studentInfo?.teamLeader}</p>
                     </div>
+
+                    {studentInfo?.teamName && (
+                      <div className="p-4 bg-slate-950/50 rounded-lg border border-primary/20">
+                        <p className="text-sm text-muted-foreground mb-1">Team Name</p>
+                        <p className="text-lg font-semibold text-primary">{studentInfo.teamName}</p>
+                      </div>
+                    )}
 
                     <div className="p-4 bg-slate-950/50 rounded-lg border border-primary/20">
                       <p className="text-sm text-muted-foreground mb-1">Event</p>
